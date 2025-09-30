@@ -26,6 +26,7 @@ mail = Mail(app)
 serializer = URLSafeTimedSerializer(app.secret_key)
 
 DB_NAME = 'parcurs.db'
+DB_NAME = os.environ.get('DB_NAME', DB_NAME)
 
 def init_db():
     created = False
